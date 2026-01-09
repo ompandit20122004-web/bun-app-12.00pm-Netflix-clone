@@ -1,0 +1,100 @@
+.title-cards {
+  margin-top: 50px;
+  margin-bottom: 30px;
+   
+}
+
+.title-cards h2 {
+  margin-bottom: 12px;
+  font-size: 22px;
+
+}
+
+/* ROW */
+.card-list {
+  display: flex;
+  gap: 14px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding: 40px 0;
+  scroll-behavior: smooth;
+ 
+}
+
+
+
+.card-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* CARD */
+.card {
+  flex: 0 0 auto;
+  min-width: 280px;
+  aspect-ratio: 16/9;
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.35s ease cubic-bezier(0.5,0,0.1,1);
+  cursor: pointer;
+    will-change: transform;
+}
+.big-card{
+  min-width: 320px;
+  aspect-ratio: 16/9; 
+}
+.big-card:hover {
+  transform: scale(1.12);
+}
+
+
+
+/* IMAGE */
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* DARK OVERLAY (Netflix style) */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.2),
+    transparent
+  );
+  opacity: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.card-overlay p {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* HOVER EFFECT */
+.card:hover {
+  transform: scale(1.15);
+  z-index: 10;
+   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.card:hover .card-overlay {
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  .card:hover {
+    transform: none;
+  }
+}
+
+
